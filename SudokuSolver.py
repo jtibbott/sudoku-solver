@@ -11,7 +11,13 @@ class Board:
                 pass
         return None
 
-# TODO: This will change to user input, possible gui?
+    def valid_in_row(self, row, num):
+        return num not in self.board[row]
+    
+    def valid_in_col(self, col, num):
+        return all(self.board[row][col] != num for row in range(9))
+
+# TODO: #1 This will change to user input, possible gui?
 puzzle = [
   [0, 0, 2, 0, 0, 8, 0, 0, 0],
   [0, 0, 0, 0, 0, 3, 7, 6, 2],
@@ -25,4 +31,3 @@ puzzle = [
 ]
 
 gameboard = Board(puzzle)
-print(gameboard.find_empty_cell())
