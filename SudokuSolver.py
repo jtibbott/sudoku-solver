@@ -25,6 +25,13 @@ class Board:
                 if self.board[row_no][col_no] == num:
                     return False
         return True
+
+    def is_valid(self, empty, num):
+        row, col = empty
+        valid_in_row = self.valid_in_row(row, num)
+        valid_in_col = self.valid_in_col(col, num)
+        valid_in_square = self.valid_in_square(row, col, num)
+        return all([valid_in_row, valid_in_col, valid_in_square])
     
 # TODO: #1 This will change to user input, possible gui?
 puzzle = [
