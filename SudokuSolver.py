@@ -33,6 +33,18 @@ class Board:
         valid_in_square = self.valid_in_square(row, col, num)
         return all([valid_in_row, valid_in_col, valid_in_square])
     
+    def solver(self):
+        if (next_empty := self.find_empty_cell()) is None:
+            return True
+        for guess in range(1, 10):
+            if self.is_valid(next_empty, guess):
+                row, col = next_empty
+                self.board[row][col] = guess
+                if self.solver():
+                    return True
+                self.board[row][col] = 0
+        return False
+    
 # TODO: #1 This will change to user input, possible gui?
 puzzle = [
   [0, 0, 2, 0, 0, 8, 0, 0, 0],
