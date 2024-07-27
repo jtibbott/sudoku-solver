@@ -44,6 +44,15 @@ class Board:
                     return True
                 self.board[row][col] = 0
         return False
+      
+def solve_sudoku(board):
+    gameboard = Board(board)
+    print(f"Puzzle to solve:\n{gameboard}")
+    if gameboard.solver(gameboard):
+        print(f"Solved puzzle:\n{gameboard}")
+    else:
+        print("The provided puzzle is unsolvable.")
+    return gameboard    
     
 # TODO: #1 This will change to user input, possible gui?
 puzzle = [
@@ -57,5 +66,3 @@ puzzle = [
   [0, 0, 0, 5, 1, 9, 0, 0, 8],
   [1, 7, 0, 0, 0, 6, 0, 0, 5]
 ]
-
-gameboard = Board(puzzle)
