@@ -2,6 +2,15 @@ class Board:
     def __init__(self, board):
         self.board = board
 
+    # TODO: #2 Refactor the __str__ method
+    def __str__(self):
+        board_str = ''
+        for row in self.board:
+            row_str = [str(i) if i else '*' for i in row]
+            board_str += ' '.join(row_str)
+            board_str += '\n'
+        return board_str
+    
     def find_empty_cell(self):
         for row, contents in enumerate(self.board):
             try:
