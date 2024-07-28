@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from copy import deepcopy
-from SudokuSolver import solve_sudoku
+from solver import solve_sudoku
 
 class SudokuGUI:
     def __init__(self, root):
@@ -27,13 +27,13 @@ class SudokuGUI:
             self.entries.append(row_entries)
 
         self.solve_button = tk.Button(self.root, text="Solve", command=self.solve)
-        self.solve_button.grid(row=9, column=1, columnspan=2, pady=10, padx=10)
+        self.solve_button.grid(row=10, column=1, columnspan=2, pady=10, padx=10)
 
         self.reset_button = tk.Button(self.root, text="Reset", command=self.reset)
-        self.reset_button.grid(row=9, column=3, columnspan=2, pady=10, padx=10)
+        self.reset_button.grid(row=10, column=3, columnspan=2, pady=10, padx=10)
 
         self.undo_button = tk.Button(self.root, text="Undo", command=self.undo)
-        self.undo_button.grid(row=9, column=5, columnspan=2, pady=10, padx=10)
+        self.undo_button.grid(row=10, column=5, columnspan=2, pady=10, padx=10)
 
     def solve(self):
         self.update_board_from_entries()

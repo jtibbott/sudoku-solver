@@ -59,19 +59,7 @@ def solve_sudoku(board):
     print(f"Puzzle to solve:\n{gameboard}")
     if gameboard.solver(gameboard):
         print(f"Solved puzzle:\n{gameboard}")
+        return gameboard.board    
     else:
         print("The provided puzzle is unsolvable.")
-    return gameboard    
-    
-# TODO: #1 This will change to user input, possible gui?
-puzzle = [
-  [0, 0, 2, 0, 0, 8, 0, 0, 0],
-  [0, 0, 0, 0, 0, 3, 7, 6, 2],
-  [4, 3, 0, 0, 0, 0, 8, 0, 0],
-  [0, 5, 0, 0, 3, 0, 0, 9, 0],
-  [0, 4, 0, 0, 0, 0, 0, 2, 6],
-  [0, 0, 0, 4, 6, 7, 0, 0, 0],
-  [0, 8, 6, 7, 0, 4, 0, 0, 0],
-  [0, 0, 0, 5, 1, 9, 0, 0, 8],
-  [1, 7, 0, 0, 0, 6, 0, 0, 5]
-]
+        return None
