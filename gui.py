@@ -7,7 +7,7 @@ class SudokuGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Sudoku Solver")
-        self.root.geometry("450x500")
+        self.root.geometry("360x420")
         self.root.resizable(False, False)
 
         self.board = [[0] * 9 for _ in range(9)]
