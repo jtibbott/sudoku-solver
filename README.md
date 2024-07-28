@@ -4,7 +4,12 @@ A simple Python-based Sudoku solver that uses a backtracking algorithm to solve 
 
 ## Features
 
-- Reads a Sudoku puzzle as a 2D list.
+- GUI to input sudoku puzzle.
 - Solves the puzzle using a backtracking algorithm.
-- Prints the puzzle before and after solving it.
+- Updates the gui to display the solution.
 - Ensures that the solution adheres to Sudoku rules.
+
+- Reset and undo buttons to clear the board and undo the solve.
+
+
+## run gui.py
