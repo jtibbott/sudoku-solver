@@ -57,7 +57,7 @@ class Board:
 def solve_sudoku(board):
     gameboard = Board(board)
     print(f"Puzzle to solve:\n{gameboard}")
-    if gameboard.solver(gameboard):
+    if gameboard.solver():
         print(f"Solved puzzle:\n{gameboard}")
         return gameboard.board    
     else:

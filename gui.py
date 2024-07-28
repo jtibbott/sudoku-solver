@@ -38,6 +38,7 @@ class SudokuGUI:
     def solve(self):
         self.update_board_from_entries()
         self.undo_stack.append(deepcopy(self.board))
+        print(self.board)
         solved_board = solve_sudoku(deepcopy(self.board))
         if solved_board:
             self.board = solved_board
