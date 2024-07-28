@@ -5,6 +5,12 @@ from solver import solve_sudoku
 
 class SudokuGUI:
     def __init__(self, root):
+        """
+        Initialize the Sudoku GUI.
+        
+        Args:
+            root (tk.Tk): The root Tkinter window.
+        """
         self.root = root
         self.root.title("Sudoku Solver")
         self.root.geometry("360x420")
@@ -17,6 +23,9 @@ class SudokuGUI:
         self.create_widgets()
 
     def create_widgets(self):
+        """
+        Create the GUI widgets.
+        """
         self.entries = []
         for row in range(9):
             row_entries = []
@@ -36,6 +45,9 @@ class SudokuGUI:
         self.undo_button.grid(row=10, column=5, columnspan=2, pady=10, padx=10)
 
     def solve(self):
+        """
+        Solve the Sudoku puzzle using the solve_sudoku function.
+        """
         self.update_board_from_entries()
         self.undo_stack.append(deepcopy(self.board))
         print(self.board)
@@ -47,10 +59,16 @@ class SudokuGUI:
             messagebox.showerror("Error", "The provided puzzle is unsolvable.")
 
     def reset(self):
+        """
+        Reset the Sudoku board to its initial state.
+        """
         self.board = deepcopy(self.initial_board)
         self.update_entries_from_board()
 
     def undo(self):
+        """
+        Undo the last action performed on the Sudoku board.
+        """
         if self.undo_stack:
             self.board = self.undo_stack.pop()
             self.update_entries_from_board()
@@ -58,12 +76,18 @@ class SudokuGUI:
             messagebox.showwarning("Warning", "No actions to undo.")
 
     def update_board_from_entries(self):
+        """
+        Update the internal board representation from the GUI entries.
+        """
         for row in range(9):
             for col in range(9):
                 value = self.entries[row][col].get()
                 self.board[row][col] = int(value) if value.isdigit() else 0
 
     def update_entries_from_board(self):
+        """
+        Update the GUI entries from the internal board representation.
+        """
         for row in range(9):
             for col in range(9):
                 value = self.board[row][col]
